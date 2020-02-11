@@ -1,34 +1,34 @@
 ## Setup
 
-Clone this repo and run `npm i` and then `npm start`
+<!-- Clone this repo and run `npm i` and then `npm start` -->
 
 ## Project Instructions
 
 #### Getting Familiar (DON'T SKIP THIS)
 
-* We're continuing to make make the Cars App more robust. This time we've added a Pie Chart, total, the ability to add and remove cars. Take a minute to go through the following files (under the components folder):
+<!-- * We're continuing to make make the Cars App more robust. This time we've added a Pie Chart, total, the ability to add and remove cars. Take a minute to go through the following files (under the components folder):
     * Dashboard.js
     * Chart.js
     * Total.js
-    * AddCar.js
+    * AddCar.js -->
 
-* Also, make sure to run the app and go to the dashboard page to see these components in action. Keep in mind that there are things that aren't connected yet. 
+<!-- * Also, make sure to run the app and go to the dashboard page to see these components in action. Keep in mind that there are things that aren't connected yet.  -->
 
 #### Project Work
 
-* The first thing we need to do is create an `actions.js` file underneath our "redux" folder.
+<!-- * The first thing we need to do is create an `actions.js` file underneath our "redux" folder. -->
 
 ##### addCar
 
-* Now, let's create an `action creator` called "addCar" that takes one parameter called "car". Have it return an object who's type is "ADD_CAR" and it's value is the car parameter.
+<!-- * Now, let's create an `action creator` called "addCar" that takes one parameter called "car". Have it return an object who's type is "ADD_CAR" and it's value is the car parameter. -->
 
-* Now we need to go to our `reducers.js` file and update the "cars" reducer. First, give it a second paramter called "action". This will represent whichever action is passed in on dispatch. No it's time to change this function and give it a switch statement. You can reference prior material for this but ultimately we want to switch on `(action.type)`, provide a case for `ADD_CAR` that returns a copy of the state array plus the new car (`[ ...state, action.value]`) and handle the default case that simply returns the state.
+<!-- * Now we need to go to our `reducers.js` file and update the "cars" reducer. First, give it a second paramter called "action". This will represent whichever action is passed in on dispatch. No it's time to change this function and give it a switch statement. You can reference prior material for this but ultimately we want to switch on `(action.type)`, provide a case for `ADD_CAR` that returns a copy of the state array plus the new car (`[ ...state, action.value]`) and handle the default case that simply returns the state. -->
 
-* We will be dispatching this action from the `AddCar` component so let's go look at that now. Notice there is a form that is collecting the input data. It happens in a dialog box that appears when you click the "Add Car" button on the dashboard page.
+<!-- * We will be dispatching this action from the `AddCar` component so let's go look at that now. Notice there is a form that is collecting the input data. It happens in a dialog box that appears when you click the "Add Car" button on the dashboard page. -->
 
-* We need to create a container for this component so that we can hook it up to Redux. Create a file called `AddCar.js` under the containers folder.
+<!-- * We need to create a container for this component so that we can hook it up to Redux. Create a file called `AddCar.js` under the containers folder. -->
 
-* Import the `{ connect }` function at the top of the file like we have in the other containers. Then, import the `AddCar` component from the components file. We also need to import the action so import `{ addCar }` from the "redux/actions" file.
+<!-- * Import the `{ connect }` function at the top of the file like we have in the other containers. Then, import the `AddCar` component from the components file. We also need to import the action so import `{ addCar }` from the "redux/actions" file. -->
 
 * Now we are going to write a `mapDispatchToProps` function. Remember, it takes one argument called "dispatch" and it returns an object who's keys are the props you want to pass. For us we will create a key called "addCar" and we'll set it's value to a function that dispatches our "addCar" action creator. It looks like this: `(car) => dispatch(addCar(car))`. The car on the left will be passed from our component when we call this function. It will then be passed onto the inner "addCar" function.
 
